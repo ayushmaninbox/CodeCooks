@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BudgetBuddy - Login</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="C:\Users\AYUSHMAN\Desktop\lemme cook\login.css"> <!-- Link to your custom login/signup stylesheet -->
+    <style>
+        /* Your custom styles */
+        /* Similar to the signup page styles */
+    </style>
+</head>
+<body class="img js-fullheight" style="background-image: url('file:///C:/Users/AYUSHMAN/Desktop/lemme%20cook/assets/bg.jpg');">
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="signup-wrap p-0">
+                    <h3 class="mb-4 text-center"><a href="file:///C:/Users/AYUSHMAN/Desktop/lemme%20cook/index.html"><img src="file:///C:/Users/AYUSHMAN/Desktop/lemme%20cook/assets/budgetBuddyf.png" alt="BudgetBuddy" style="display: block; margin: 0 auto;"></a></h3>
+                    <form action="#" class="signup-form">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input id="password-field" type="password" class="form-control" placeholder="Password" required>
+                            <span class="fa fa-fw fa-eye field-icon toggle-password" toggle="#password-field"></span>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="form-control btn btn-primary submit px-3">Login</button>
+                        </div>
+                        <div class="form-group text-center" style="color: white;">
+                            <p class="mb-0">Don't have an account? <a href="file:///C:/Users/AYUSHMAN/Desktop/lemme%20cook/sign-up.html">Sign Up</a></p>
+                        </div>
+                    </form>
+                    <!-- Removed Google and Facebook buttons -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery library -->
+<script>
+    (function($) {
+        "use strict";
+
+        var fullHeight = function() {
+            $('.js-fullheight').css('height', $(window).height());
+            $(window).resize(function(){
+                $('.js-fullheight').css('height', $(window).height());
+            });
+        };
+        fullHeight();
+
+        $(".toggle-password").click(function() {
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+
+    })(jQuery);
+</script>
+
+</body>
+</html>
