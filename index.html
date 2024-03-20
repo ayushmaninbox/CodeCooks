@@ -15,10 +15,9 @@
             <img src="assets/budgetBuddyf.png" alt="BudgetBuddy Logo">
         </div>
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#tracker">Use Tracker</a></li>
-            <li><a href="#how-it-works">How it works</a></li>
-            <li><a href="./support.html">Support</a></li>
+            <li><a href="#" class="smooth-scroll" data-target="section-box">Home</a></li>
+            <li><a href="#tracker" class="smooth-scroll" data-target="tracker">Use Tracker</a></li>
+            <li><a href="#how-it-works" class="smooth-scroll" data-target="how-it-works">How it works</a></li>
         </ul>
         <div class="buttons">
             <a href="./login.html" class="btn-head"><i class="fas fa-sign-in-alt"></i> Log In</a>
@@ -26,7 +25,7 @@
         </div>
     </nav>
 
-    <section class="section-box">
+    <section class="section-box" id="section-box">
         <div class="main-landing">
             <div class="content">
                 <h1 class="under-welcome-h1">Take Control of Your Finances</h1>
@@ -154,6 +153,25 @@
     <script src="script.js"></script>
     <script>
         feather.replace();
+
+        // Smooth scrolling function
+        function smoothScroll(target) {
+            const targetElement = document.getElementById(target);
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+
+        // Smooth scrolling for navbar links
+        const navbarLinks = document.querySelectorAll('.smooth-scroll');
+        navbarLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = this.getAttribute('data-target');
+                smoothScroll(target);
+            });
+        });
     </script>
 </body>
 </html>
